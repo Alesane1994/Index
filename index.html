@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme Mystérieuse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+        }
+        .enigme {
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        input, button {
+            margin-top: 20px;
+            font-size: 16px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Résolvez cette énigme</h1>
+    <div class="enigme">
+        Créée pour conserver ce qui devait durer,<br>
+        Je suis un lieu où rien ne pouvait s’altérer.<br>
+        Mais aujourd’hui, ma mission est bien loin,<br>
+        Je ne fais que garder des objets sans destin.<br><br>
+        Un murmure discret habite mes murs clos,<br>
+        Un écho lointain d’un ancien manteau froid.<br>
+        Qui suis-je, oubliée dans ce rôle incertain ?
+    </div>
+
+    <input type="text" id="answer" placeholder="Entrez votre réponse ici...">
+    <button onclick="checkAnswer()">Valider</button>
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase().trim();
+            const correctAnswer = "frigo"; // Réponse correcte
+            const resultElement = document.getElementById('result');
+
+            if (answer === correctAnswer) {
+                resultElement.textContent = "Bravo ! Vous avez trouvé la bonne réponse.";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Désolé, ce n'est pas la bonne réponse. Essayez encore !";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
